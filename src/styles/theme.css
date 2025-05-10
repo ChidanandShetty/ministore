@@ -1,0 +1,63 @@
+:root {
+  /* Primary brand colors */
+  --color-primary: #1e3a8a;     /* Indigo-900 */
+  --color-accent: #f97316;      /* Orange-500 */
+  --color-success: #10b981;     /* Green-500 */
+  --color-error: #ef4444;       /* Red-500 */
+
+  /* Backgrounds */
+  --color-bg: #f9fafb;          /* Light gray background */
+  --color-card: #ffffff;        /* Card/containers */
+
+  /* Text colors */
+  --text-primary: #1f2937;      /* Gray-800 */
+  --text-secondary: #6b7280;    /* Gray-500 */
+
+  /* Other common */
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --color-icon: #6366f1; 
+  
+}
+
+/* Base font and box sizing */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Reusable utility classes */
+.btn {
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb; /* Indigo-600 */
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: #fb923c; /* Lighter orange */
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}

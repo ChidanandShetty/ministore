@@ -2,6 +2,8 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import styles from './LoginPage.module.css'; // 👈 Importing CSS module
 
 interface LoginForm {
   email: string;
@@ -21,10 +23,10 @@ const LoginPage = () => {
     onSuccess: (data) => {
       localStorage.setItem('token', data.access_token);
       queryClient.setQueryData(['auth'], data);
-      navigate('/products');
+      navigate('/home');
     },
-    onError: () => {
-      alert('Invalid login credentials');
+    onError: (error) => {
+      toast.error(error.message || 'Invalid login credentials');
     },
   });
 
@@ -34,8 +36,8 @@ const LoginPage = () => {
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Login</h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Login to MiniStore</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -43,15 +45,21 @@ const LoginPage = () => {
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
           required
-        /><br /><br />
+          className={styles.input}
+        />
         <input
           type="password"
           placeholder="Password"
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
           required
-        /><br /><br />
-        <button type="submit" disabled={status === 'pending'}>
+          className={styles.input}
+        />
+        <button
+          type="submit"
+          disabled={status === 'pending'}
+          className={styles.button}
+        >
           {status === 'pending' ? 'Logging in...' : 'Login'}
         </button>
       </form>

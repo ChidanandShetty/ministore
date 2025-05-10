@@ -1,0 +1,149 @@
+.container {
+  padding: 20px;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.searchFilter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.searchInput,
+.categorySelect {
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ✅ Shared icon styling for cart + profile */
+.iconButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #eee;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  color: var(--color-icon); /* 👈 make it indigo */
+}
+
+
+/* ✅ Product Grid Layout */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ Product Card Style */
+.productCard {
+  background-color: var(--color-card);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s;
+}
+
+.productCard:hover {
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cardImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-right: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.cardPrice {
+  margin: 0.25rem 0;
+  color: var(--color-accent);
+}
+
+.cardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.detailsButton {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 6px 10px;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.detailsButton:hover {
+  background-color: #2563eb;
+}
+
+.cartAddButton {
+  background-color: var(--color-success);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cartAddButton:hover {
+  background-color: #22c55e;
+}
+
+.loadMoreButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.loadMoreButton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
